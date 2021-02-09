@@ -11,7 +11,7 @@ filename_out = "/home/agoryelov/python-scripts/data_chunk.h5"
 h5_file = h5py.File(filename,'r')
 out_file = h5py.File(filename_out, 'w')
 
-max_index = 10000
+max_index = 3000
 
 def copy_events(name, object):
     if name != 'hit_charge' and name != 'hit_pmt' and name != 'hit_time':
@@ -21,7 +21,7 @@ max_hit_index = h5_file['event_hits_index'][max_index + 1]
 print(max_hit_index)
 
 def copy_hits(name, object):
-    if name == 'hit_charge' or name == 'hit_pmt' and name == 'hit_time':
+    if name == 'hit_charge' or name == 'hit_pmt' or name == 'hit_time':
         out_file.create_dataset(name, data=object[0:max_hit_index])
     
 
