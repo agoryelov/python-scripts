@@ -11,7 +11,7 @@ filename_out = "/home/agoryelov/python-scripts/data_chunk.h5"
 h5_file = h5py.File(filename,'r')
 out_file = h5py.File(filename_out, 'w')
 
-max_index = 1000
+max_index = 10000
 
 def copy_events(name, object):
     if name != 'hit_charge' and name != 'hit_pmt' and name != 'hit_time':
